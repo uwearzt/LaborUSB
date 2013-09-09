@@ -6917,7 +6917,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 </class>
 </classes>
 <parts>
-<part name="J1" library="LaborUSB" deviceset="BANANA" device=""/>
+<part name="GND" library="LaborUSB" deviceset="BANANA" device=""/>
 <part name="J2" library="LaborUSB" deviceset="BANANA" device=""/>
 <part name="J3" library="LaborUSB" deviceset="BANANA" device=""/>
 <part name="J4" library="LaborUSB" deviceset="BANANA" device=""/>
@@ -6936,7 +6936,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <plain>
 </plain>
 <instances>
-<instance part="J1" gate="G$1" x="40.64" y="165.1" rot="R90"/>
+<instance part="GND" gate="G$1" x="40.64" y="165.1" rot="R90"/>
 <instance part="J2" gate="G$1" x="50.8" y="165.1" rot="R90"/>
 <instance part="J3" gate="G$1" x="40.64" y="144.78" rot="R270"/>
 <instance part="J4" gate="G$1" x="50.8" y="144.78" rot="R270"/>
@@ -6961,7 +6961,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <net name="GND" class="0">
 <segment>
 <wire x1="40.64" y1="162.56" x2="40.64" y2="154.94" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="1"/>
+<pinref part="GND" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <wire x1="50.8" y1="162.56" x2="50.8" y2="154.94" width="0.1524" layer="91"/>
