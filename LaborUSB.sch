@@ -107,11 +107,6 @@
 <libraries>
 <library name="LaborUSB">
 <packages>
-<package name="BANANA">
-<description>Hole for M6 Banana Plug (screwed connection)</description>
-<circle x="0" y="0" radius="6" width="0.15" layer="21"/>
-<pad name="P$1" x="0" y="0" drill="6" diameter="11"/>
-</package>
 <package name="USB-A-VERTICAL">
 <description>&lt;b&gt;USB Series A Hole Mounted&lt;/b&gt;</description>
 <wire x1="-3" y1="6" x2="-3" y2="-6" width="0.2032" layer="21"/>
@@ -126,14 +121,13 @@
 <pad name="GND3" x="0" y="6.55" drill="2.2" shape="octagon" rot="R270"/>
 <text x="5.85" y="-2.7" size="1.27" layer="25" rot="R90">&gt;NAME</text>
 </package>
+<package name="BANANA">
+<description>Hole for M6 Banana Plug (screwed connection)</description>
+<circle x="0" y="0" radius="6" width="0.15" layer="21"/>
+<pad name="P$1" x="0" y="0" drill="6" diameter="11" thermals="no"/>
+</package>
 </packages>
 <symbols>
-<symbol name="BANANA">
-<circle x="0" y="0" radius="1.2951" width="0.254" layer="94"/>
-<text x="-1.016" y="1.778" size="1.27" layer="95">&gt;NAME</text>
-<text x="-1.016" y="-3.048" size="1.27" layer="96">&gt;VALUE</text>
-<pin name="1" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
-</symbol>
 <symbol name="USB+SHIELD">
 <wire x1="7.62" y1="10.16" x2="0" y2="10.16" width="0.254" layer="94"/>
 <wire x1="0" y1="10.16" x2="0" y2="-2.54" width="0.254" layer="94"/>
@@ -146,24 +140,14 @@
 <pin name="P$1" x="2.54" y="-5.08" visible="pad" length="short" rot="R90"/>
 <pin name="P$2" x="5.08" y="-5.08" visible="pad" length="short" rot="R90"/>
 </symbol>
+<symbol name="BANANA">
+<circle x="0" y="0" radius="1.2951" width="0.254" layer="94"/>
+<text x="-1.016" y="1.778" size="1.27" layer="95">&gt;NAME</text>
+<text x="-1.016" y="-3.048" size="1.27" layer="96">&gt;VALUE</text>
+<pin name="1" x="-2.54" y="0" visible="off" length="short" direction="pas"/>
+</symbol>
 </symbols>
 <devicesets>
-<deviceset name="BANANA" prefix="J" uservalue="yes">
-<description>Through-hole banana jack</description>
-<gates>
-<gate name="G$1" symbol="BANANA" x="-2.54" y="0"/>
-</gates>
-<devices>
-<device name="" package="BANANA">
-<connects>
-<connect gate="G$1" pin="1" pad="P$1"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
 <deviceset name="USB+SHIELD">
 <description>&lt;h3&gt;USB+Shield&lt;/h3&gt;
 USB connector with shield pins connectable</description>
@@ -179,6 +163,22 @@ USB connector with shield pins connectable</description>
 <connect gate="G$1" pin="P$1" pad="GND2"/>
 <connect gate="G$1" pin="P$2" pad="GND3"/>
 <connect gate="G$1" pin="VBUS" pad="VBUS"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="BANANA" prefix="J" uservalue="yes">
+<description>Through-hole banana jack</description>
+<gates>
+<gate name="G$1" symbol="BANANA" x="-2.54" y="0"/>
+</gates>
+<devices>
+<device name="" package="BANANA">
+<connects>
+<connect gate="G$1" pin="1" pad="P$1"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -6917,10 +6917,6 @@ We've spent an enormous amount of time creating and checking these footprints an
 </class>
 </classes>
 <parts>
-<part name="GND" library="LaborUSB" deviceset="BANANA" device=""/>
-<part name="J2" library="LaborUSB" deviceset="BANANA" device=""/>
-<part name="J3" library="LaborUSB" deviceset="BANANA" device=""/>
-<part name="J4" library="LaborUSB" deviceset="BANANA" device=""/>
 <part name="USB1" library="LaborUSB" deviceset="USB+SHIELD" device=""/>
 <part name="USB2" library="LaborUSB" deviceset="USB+SHIELD" device=""/>
 <part name="USB3" library="LaborUSB" deviceset="USB+SHIELD" device=""/>
@@ -6930,16 +6926,16 @@ We've spent an enormous amount of time creating and checking these footprints an
 <part name="R3" library="resistor" deviceset="R-EU_" device="R0805" value="51K"/>
 <part name="R4" library="resistor" deviceset="R-EU_" device="R0805" value="51K"/>
 <part name="LOGO1" library="SparkFun-Aesthetics" deviceset="OSHW-LOGO" device="M"/>
+<part name="J1" library="LaborUSB" deviceset="BANANA" device=""/>
+<part name="J2" library="LaborUSB" deviceset="BANANA" device=""/>
+<part name="J3" library="LaborUSB" deviceset="BANANA" device=""/>
+<part name="J4" library="LaborUSB" deviceset="BANANA" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
 </plain>
 <instances>
-<instance part="GND" gate="G$1" x="40.64" y="165.1" rot="R90"/>
-<instance part="J2" gate="G$1" x="50.8" y="165.1" rot="R90"/>
-<instance part="J3" gate="G$1" x="40.64" y="144.78" rot="R270"/>
-<instance part="J4" gate="G$1" x="50.8" y="144.78" rot="R270"/>
 <instance part="USB1" gate="G$1" x="30.48" y="162.56" rot="R90"/>
 <instance part="USB2" gate="G$1" x="10.16" y="162.56" rot="R90"/>
 <instance part="USB3" gate="G$1" x="2.54" y="147.32" rot="R270"/>
@@ -6949,6 +6945,10 @@ We've spent an enormous amount of time creating and checking these footprints an
 <instance part="R3" gate="G$1" x="58.42" y="144.78" rot="R90"/>
 <instance part="R4" gate="G$1" x="66.04" y="144.78" rot="R90"/>
 <instance part="LOGO1" gate="G$1" x="5.08" y="182.88"/>
+<instance part="J1" gate="G$1" x="40.64" y="165.1" rot="R90"/>
+<instance part="J2" gate="G$1" x="50.8" y="165.1" rot="R90"/>
+<instance part="J3" gate="G$1" x="40.64" y="144.78" rot="R270"/>
+<instance part="J4" gate="G$1" x="50.8" y="144.78" rot="R270"/>
 </instances>
 <busses>
 <bus name="VBUS,GND,D+,D-">
@@ -6961,7 +6961,7 @@ We've spent an enormous amount of time creating and checking these footprints an
 <net name="GND" class="0">
 <segment>
 <wire x1="40.64" y1="162.56" x2="40.64" y2="154.94" width="0.1524" layer="91"/>
-<pinref part="GND" gate="G$1" pin="1"/>
+<pinref part="J1" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <wire x1="50.8" y1="162.56" x2="50.8" y2="154.94" width="0.1524" layer="91"/>

@@ -123,11 +123,6 @@
 <libraries>
 <library name="LaborUSB">
 <packages>
-<package name="BANANA">
-<description>Hole for M6 Banana Plug (screwed connection)</description>
-<circle x="0" y="0" radius="6" width="0.15" layer="21"/>
-<pad name="P$1" x="0" y="0" drill="6" diameter="11"/>
-</package>
 <package name="USB-A-VERTICAL">
 <description>&lt;b&gt;USB Series A Hole Mounted&lt;/b&gt;</description>
 <wire x1="-3" y1="6" x2="-3" y2="-6" width="0.2032" layer="21"/>
@@ -141,6 +136,11 @@
 <pad name="GND2" x="0" y="-6.55" drill="2.2" shape="octagon" rot="R270"/>
 <pad name="GND3" x="0" y="6.55" drill="2.2" shape="octagon" rot="R270"/>
 <text x="5.85" y="-2.7" size="1.27" layer="25" rot="R90">&gt;NAME</text>
+</package>
+<package name="BANANA">
+<description>Hole for M6 Banana Plug (screwed connection)</description>
+<circle x="0" y="0" radius="6" width="0.15" layer="21"/>
+<pad name="P$1" x="0" y="0" drill="6" diameter="11" thermals="no"/>
 </package>
 </packages>
 </library>
@@ -1458,10 +1458,6 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="GND" library="LaborUSB" package="BANANA" value="" x="64" y="33"/>
-<element name="J2" library="LaborUSB" package="BANANA" value="" x="83" y="33"/>
-<element name="J3" library="LaborUSB" package="BANANA" value="" x="64" y="14"/>
-<element name="J4" library="LaborUSB" package="BANANA" value="" x="82.5" y="14"/>
 <element name="USB1" library="LaborUSB" package="USB-A-VERTICAL" value="USB+SHIELD" x="42.5" y="23.5"/>
 <element name="USB2" library="LaborUSB" package="USB-A-VERTICAL" value="USB+SHIELD" x="32.5" y="23.5"/>
 <element name="USB3" library="LaborUSB" package="USB-A-VERTICAL" value="USB+SHIELD" x="22.5" y="23.5"/>
@@ -1480,11 +1476,13 @@ design rules under a new name.</description>
 </element>
 <element name="R4" library="resistor" package="R0805" value="51K" x="3.5" y="27"/>
 <element name="LOGO1" library="SparkFun-Aesthetics" package="OSHW-LOGO-M" value="OSHW-LOGOM" x="73" y="23.5"/>
+<element name="J1" library="LaborUSB" package="BANANA" value="" x="64" y="33"/>
+<element name="J2" library="LaborUSB" package="BANANA" value="" x="83" y="33"/>
+<element name="J3" library="LaborUSB" package="BANANA" value="" x="64" y="14"/>
+<element name="J4" library="LaborUSB" package="BANANA" value="" x="83" y="14"/>
 </elements>
 <signals>
 <signal name="GND">
-<contactref element="GND" pad="P$1"/>
-<contactref element="J2" pad="P$1"/>
 <contactref element="USB2" pad="GND"/>
 <contactref element="USB1" pad="GND"/>
 <contactref element="USB4" pad="GND"/>
@@ -1504,10 +1502,10 @@ design rules under a new name.</description>
 <vertex x="90" y="43"/>
 <vertex x="14" y="43"/>
 </polygon>
+<contactref element="J1" pad="P$1"/>
+<contactref element="J2" pad="P$1"/>
 </signal>
 <signal name="VBUS">
-<contactref element="J3" pad="P$1"/>
-<contactref element="J4" pad="P$1"/>
 <contactref element="USB2" pad="VBUS"/>
 <contactref element="USB1" pad="VBUS"/>
 <contactref element="USB4" pad="VBUS"/>
@@ -1526,6 +1524,8 @@ design rules under a new name.</description>
 <vertex x="90" y="4"/>
 <vertex x="14" y="4"/>
 </polygon>
+<contactref element="J3" pad="P$1"/>
+<contactref element="J4" pad="P$1"/>
 </signal>
 <signal name="D+">
 <contactref element="USB2" pad="D+"/>
